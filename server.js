@@ -78,7 +78,6 @@ app.post("/update", function (req, res) {
  * FUNCTIONS
  */
 
-// TESTABLE :)
 /**
  * Returns an object with validation success and/or errors
  *
