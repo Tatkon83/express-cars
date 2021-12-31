@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>
+    <h1>CAR Broker</h1>
+
+    <ul>
+        <li><a href="/getAll">See all our cars</a></li>
+    </ul>
+
+    <% if (typeof index !== 'undefined') { %>
+        <h2>Edit car <%= index %></h2>
+    <% } else { %>
+        <h2>Add a car</h2>
+    <% } %>
+
+    <% if (errors.length > 0) { %>
+        <ul style="color:red">
+        <% errors.forEach(function(error, index) { %>
+            <li><%= error %></li>
+        <% }) %>
+        </ul>
+    <% } %>
+    <form action="/<%= typeof index !== 'undefined' ? 'update' : 'save' %>" method="POST">
+        <input type="text" name="maker" value="<%= element.Maker || '' %>" placeholder="Maker">
+        <input type="text" name="model" value="<%= element.Genmodel || '' %>" placeholder="Model">
+        <input type="text" name="year" value="<%= element.Adv_year || '' %>" placeholder="Year">
+        <select name="color">
+            <option value="">Color</option>
+            <option <%= element.Color === 'Red' ? 'selected' : '' %>>Red</option>
+            <option <%= element.Color === 'Blue' ? 'selected' : '' %>>Blue</option>
+            <option <%= element.Color === 'Green' ? 'selected' : '' %>>Green</option>
+            <option <%= element.Color === 'Yellow' ? 'selected' : '' %>>Yellow</option>
+            <option <%= element.Color === 'White' ? 'selected' : '' %>>White</option>
+            <option <%= element.Color === 'Black' ? 'selected' : '' %>>Black</option>
+            <option <%= element.Color === 'Brown' ? 'selected' : '' %>>Brown</option>
+            <option <%= element.Color === 'Awesome!' ? 'selected' : '' %>>Awesome!</option>
+        </select>
+
+        <input type="text" name="mileage" value="<%= element.Runned_Miles || '' %>" placeholder="Mileage">
+        <input type="text" name="price" value="<%= element.Price || '' %>" placeholder="Price">
+        <% if (typeof index !== 'undefined') { %>
+        <input type="hidden" name="id" value="<%= index %>">
+        <% } %>
+        <input type="submit" value="Save">
+    </form>
+</body>
+
+</html>

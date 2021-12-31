@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>
+    <h1>All cars</h1>
+
+    <form action="/">
+        <input type="submit" value="Take me back!">
+    </form>
+
+    <table>
+        <tr>
+            <th>Maker</th>
+            <th>Model</th>
+            <th>Adv. Year</th>
+            <th>Color</th>
+            <th>Mileage</th>
+            <th>Price</th>
+            <th>Options</th>
+        </tr>
+        <% cars.forEach(function(car, index) { %>
+            <tr>
+                <td>
+                    <%= car["Maker"] %>
+                </td>
+                <td>
+                    <%= car["Genmodel"] %>
+                </td>
+                <td>
+                    <%= car["Adv_year"] %>
+                </td>
+                <td>
+                    <%= car["Color"] %>
+                </td>
+                <td>
+                    <%= car["Runned_Miles"] %>
+                </td>
+                <td>
+                    <%= car["Price"] %>
+                </td>
+                <td>
+                    <a href="/edit?id=<%= index %>">Edit</a>
+                    <a href="/delete?id=<%= index %>">Delete</a>
+                </td>
+            </tr>
+            <% }) %>
+    </table>
+</body>
+
+</html>
