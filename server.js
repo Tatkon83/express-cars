@@ -9,7 +9,7 @@ app.set("view engine", "ejs");
 // needed to let express know how to interpret the data sent in the body (when using POST)
 app.use(express.urlencoded({ extended: true }));
 
-// get the movies/series map from the "DB" file
+// get the cars map from the "DB" file
 // Only necessary if we do not declare the variable in this file
 const msdb = require("./msdb");
 let ms = msdb.msDB;
