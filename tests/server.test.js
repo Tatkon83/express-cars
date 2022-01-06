@@ -6,13 +6,13 @@ const {
     save,
     update,
     ms
-} = require("./server");
+} = require("../src/server");
 
 test("Validates correct data", function () {
     const body = {
         "Maker": "Chrysler",
         "Genmodel": "300C",
-        "Adv_year": 2018,
+        "Adv_year": 1978,
         "Color": "Black",
         "Runned_Miles": 157950,
         "Price": 5495
